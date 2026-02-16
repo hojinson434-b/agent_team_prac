@@ -119,11 +119,11 @@ export default function MobileMenu({ isOpen, onClose }) {
             </>
           ) : (
             <Link
-              href="/login"
+              href="/auth"
               onClick={handleLinkClick}
-              className="block px-4 py-3 font-body text-body text-sesame dark:text-injeolmi hover:bg-injeolmi dark:hover:bg-dark-surface hover:text-chestnut dark:hover:text-cream rounded-lg transition-colors"
+              className="block px-4 py-3 font-body text-body font-medium text-redbean hover:bg-injeolmi dark:hover:bg-dark-surface rounded-lg transition-colors"
             >
-              로그인
+              로그인 / 회원가입
             </Link>
           )}
         </nav>

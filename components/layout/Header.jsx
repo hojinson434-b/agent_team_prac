@@ -118,12 +118,11 @@ export default function Header() {
 
             {/* 로그인/마이페이지 버튼 (데스크톱만) */}
             <Link
-              href={user ? '/mypage' : '/login'}
-              className="hidden md:flex items-center justify-center w-10 h-10 rounded-full hover:bg-injeolmi dark:hover:bg-dark-surface transition-colors"
-              aria-label={user ? '마이페이지' : '로그인'}
+              href={user ? '/mypage' : '/auth'}
+              className="hidden md:flex items-center gap-2 h-10 px-4 rounded-button font-body text-caption font-medium bg-redbean text-white hover:bg-honey transition-colors"
             >
               <svg
-                className="w-6 h-6 text-sesame dark:text-cream"
+                className="w-5 h-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -135,6 +134,7 @@ export default function Header() {
                   d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                 />
               </svg>
+              {user ? user.name : '로그인'}
             </Link>
 
             {/* 햄버거 메뉴 버튼 (모바일/태블릿) */}
