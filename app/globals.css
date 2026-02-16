@@ -1,4 +1,4 @@
-/* 떡담 (Tteokdam) - 韓모던 글로벌 스타일 */
+/* 떡담 (Tteokdam) - 봄 꽃떡 글로벌 스타일 */
 
 @tailwind base;
 @tailwind components;
@@ -95,7 +95,7 @@
 /* Firefox 스크롤바 */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #C4956A #F5EDE0;
+  scrollbar-color: #D4A0B0 #FFF0F3;
 }
 
 /* Components Layer - 재사용 컴포넌트 클래스 */
