@@ -107,7 +107,7 @@ export default function NoticePage() {
   }
 
   return (
-    <main className="bg-cream min-h-screen">
+    <main className="bg-cream dark:bg-dark-bg min-h-screen">
       <div className="max-w-content mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12">
         {/* 페이지 제목 */}
         <h1 className="font-display text-heading-2 md:text-heading-1 text-chestnut mb-8">
@@ -122,7 +122,7 @@ export default function NoticePage() {
             return (
               <article
                 key={notice.id}
-                className="bg-white rounded-card shadow-warm-sm overflow-hidden transition-all duration-300 hover:shadow-warm-hover"
+                className="bg-white dark:bg-dark-card rounded-card shadow-warm-sm overflow-hidden transition-all duration-300 hover:shadow-warm-hover"
               >
                 {/* 공지사항 헤더 (클릭 영역) */}
                 <button
@@ -146,7 +146,7 @@ export default function NoticePage() {
                         </time>
                       </div>
 
-                      <h2 className="text-body font-medium text-chestnut">
+                      <h2 className="text-body font-medium text-chestnut dark:text-cream">
                         {notice.title}
                       </h2>
                     </div>
@@ -180,9 +180,9 @@ export default function NoticePage() {
                 {isExpanded && (
                   <div
                     id={`notice-content-${notice.id}`}
-                    className="px-6 pb-6 pt-0 border-t border-injeolmi"
+                    className="px-6 pb-6 pt-0 border-t border-injeolmi dark:border-chestnut-light"
                   >
-                    <div className="mt-4 text-body text-chestnut-light whitespace-pre-line leading-relaxed">
+                    <div className="mt-4 text-body text-chestnut-light dark:text-caramel whitespace-pre-line leading-relaxed">
                       {notice.content}
                     </div>
                   </div>

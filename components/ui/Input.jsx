@@ -11,14 +11,14 @@ export default function Input({
   className = '',
   ...props
 }) {
-  // 입력 필드 기본 스타일
+  // 입력 필드 기본 스타일 — 다크모드 대응 포함
   const inputStyles = `
-    w-full h-12 px-4 border rounded-button font-body text-body text-sesame bg-white
+    w-full h-12 px-4 border rounded-button font-body text-body text-sesame dark:text-cream bg-white dark:bg-dark-card
     focus:outline-none transition-all duration-200
     placeholder:text-caramel/50
     ${error
       ? 'border-redbean focus:border-redbean focus:ring-2 focus:ring-redbean/20'
-      : 'border-injeolmi focus:border-caramel focus:ring-2 focus:ring-caramel/20'
+      : 'border-injeolmi dark:border-chestnut-light focus:border-caramel focus:ring-2 focus:ring-caramel/20'
     }
   `
 
@@ -28,7 +28,7 @@ export default function Input({
       {label && (
         <label
           htmlFor={id}
-          className="block text-body font-body font-medium text-chestnut mb-2"
+          className="block text-body font-body font-medium text-chestnut dark:text-cream mb-2"
         >
           {label}
         </label>

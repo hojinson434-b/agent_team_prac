@@ -10,12 +10,12 @@ export default function VendorCard({ vendor }) {
   return (
     <Link
       href={`/vendors/${vendor.id}`}
-      className="block bg-white rounded-card shadow-warm-sm p-6 hover:shadow-warm-hover hover:-translate-y-1 transition-all duration-300"
+      className="block bg-white dark:bg-dark-card rounded-card shadow-warm-sm p-6 hover:shadow-warm-hover hover:-translate-y-1 transition-all duration-300"
     >
       {/* 상단: 이미지 + 업체명 + 인증 배지 */}
       <div className="flex items-start gap-4 mb-4">
         {/* 업체 이미지 */}
-        <div className="relative w-20 h-20 rounded-full overflow-hidden flex-shrink-0 bg-rice">
+        <div className="relative w-20 h-20 rounded-full overflow-hidden flex-shrink-0 bg-rice dark:bg-dark-surface">
           <Image
             src={vendor.image}
             alt={vendor.name}
@@ -29,7 +29,7 @@ export default function VendorCard({ vendor }) {
         {/* 업체명 + 인증 배지 */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
-            <h3 className="font-display text-heading-4 text-chestnut truncate">
+            <h3 className="font-display text-heading-4 text-chestnut dark:text-cream truncate">
               {vendor.name}
             </h3>
             {vendor.isVerified && (
@@ -45,14 +45,14 @@ export default function VendorCard({ vendor }) {
       </div>
 
       {/* 설명 (2줄 말줄임) */}
-      <p className="text-body text-sesame mb-4 line-clamp-2">
+      <p className="text-body text-sesame dark:text-injeolmi mb-4 line-clamp-2">
         {vendor.description}
       </p>
 
       {/* 평점 */}
       <div className="flex items-center gap-2 mb-4">
         <span className="text-honey text-body">★</span>
-        <span className="font-body font-medium text-chestnut">
+        <span className="font-body font-medium text-chestnut dark:text-cream">
           {vendor.rating.toFixed(1)}
         </span>
         <span className="text-caption text-caramel">
@@ -65,7 +65,7 @@ export default function VendorCard({ vendor }) {
         {vendor.specialties.slice(0, 3).map((specialty, index) => (
           <span
             key={index}
-            className="bg-injeolmi text-chestnut text-caption font-body rounded-full px-3 py-1"
+            className="bg-injeolmi dark:bg-dark-surface text-chestnut dark:text-cream text-caption font-body rounded-full px-3 py-1"
           >
             {specialty}
           </span>

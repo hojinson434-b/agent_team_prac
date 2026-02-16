@@ -4,6 +4,7 @@
 // 화사한 봄꽃 + 로맨틱 모던
 
 module.exports = {
+  darkMode: 'class', // 다크모드: ThemeContext에서 document.documentElement에 'dark' 클래스 토글
   content: [
     "./pages/**/*.{js,jsx,mdx}",
     "./components/**/*.{js,jsx,mdx}",
@@ -32,6 +33,11 @@ module.exports = {
         injeolmi: '#F5DDE0',       // 연꽃잎 - 카드 배경/보더
         songpyeon: '#B8A9D4',      // 연보라 - 보조 강조 (라일락)
         caramel: '#D4A0B0',        // 모란 - 테두리, 호버
+
+        // 다크모드 전용 색상
+        'dark-bg': '#1A1118',       // 가장 어두운 배경
+        'dark-card': '#2D1F2D',     // 카드/서피스
+        'dark-surface': '#3D2D3D',  // 약간 밝은 서피스
       },
 
       // 폰트 패밀리 - 시스템 폰트 사용

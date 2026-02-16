@@ -31,7 +31,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-chestnut text-cream">
+    <footer className="bg-chestnut dark:bg-dark-bg text-cream dark:border-t dark:border-chestnut-light">
       <div className="max-w-wide mx-auto px-4 md:px-6 lg:px-8 py-12">
         {/* 메인 콘텐츠 그리드 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -104,7 +104,7 @@ export default function Footer() {
         </div>
 
         {/* 구분선 */}
-        <div className="border-t border-chestnut-light my-8" />
+        <div className="border-t border-chestnut-light dark:border-dark-surface my-8" />
 
         {/* 하단 카피라이트 */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">

@@ -69,11 +69,11 @@ function ToastItem({ id, message, type, onClose }) {
     setTimeout(() => setIsVisible(true), 10)
   }, [])
 
-  // type별 스타일
+  // type별 스타일 — 다크모드에서도 동일 (강한 색상 유지)
   const types = {
     success: 'bg-mugwort text-white border-l-4 border-songpyeon',
     error: 'bg-redbean text-white',
-    info: 'bg-chestnut text-white'
+    info: 'bg-chestnut dark:bg-dark-surface text-white'
   }
 
   // type별 아이콘

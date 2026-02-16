@@ -50,13 +50,13 @@ export default function MyPage() {
   // 비로그인 시 안내 화면
   if (!isLoggedIn()) {
     return (
-      <main className="bg-cream min-h-screen py-12 px-4">
+      <main className="bg-cream dark:bg-dark-bg min-h-screen py-12 px-4">
         <div className="max-w-content mx-auto text-center">
-          <div className="bg-white rounded-card shadow-warm-md p-12">
-            <h1 className="font-display text-heading-2 text-chestnut mb-4">
+          <div className="bg-white dark:bg-dark-card rounded-card shadow-warm-md p-12">
+            <h1 className="font-display text-heading-2 text-chestnut dark:text-cream mb-4">
               로그인이 필요합니다
             </h1>
-            <p className="text-body text-chestnut-light mb-8">
+            <p className="text-body text-chestnut-light dark:text-caramel mb-8">
               마이페이지를 이용하려면 로그인해주세요.
             </p>
             <Link href="/auth">
@@ -71,23 +71,23 @@ export default function MyPage() {
   }
 
   return (
-    <main className="bg-cream min-h-screen">
+    <main className="bg-cream dark:bg-dark-bg min-h-screen">
       <div className="max-w-wide mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12">
         {/* 페이지 제목 */}
-        <h1 className="font-display text-heading-2 md:text-heading-1 text-chestnut mb-8">
+        <h1 className="font-display text-heading-2 md:text-heading-1 text-chestnut dark:text-cream mb-8">
           마이페이지
         </h1>
 
         <div className="flex flex-col md:flex-row gap-8">
           {/* 사이드바 (데스크톱) / 탭 (모바일) */}
           <aside className="w-full md:w-64 flex-shrink-0">
-            <nav className="bg-white rounded-card shadow-warm-sm p-4">
+            <nav className="bg-white dark:bg-dark-card rounded-card shadow-warm-sm p-4">
               <button
                 onClick={() => setActiveTab('info')}
                 className={`w-full text-left px-4 py-3 rounded-button text-body font-medium transition-all duration-300 mb-2 ${
                   activeTab === 'info'
                     ? 'bg-honey text-white'
-                    : 'text-chestnut hover:bg-rice'
+                    : 'text-chestnut dark:text-injeolmi hover:bg-rice dark:hover:bg-dark-surface'
                 }`}
               >
                 회원정보
@@ -97,7 +97,7 @@ export default function MyPage() {
                 className={`w-full text-left px-4 py-3 rounded-button text-body font-medium transition-all duration-300 mb-2 ${
                   activeTab === 'wishlist'
                     ? 'bg-honey text-white'
-                    : 'text-chestnut hover:bg-rice'
+                    : 'text-chestnut dark:text-injeolmi hover:bg-rice dark:hover:bg-dark-surface'
                 }`}
               >
                 찜 목록
@@ -112,7 +112,7 @@ export default function MyPage() {
                 className={`w-full text-left px-4 py-3 rounded-button text-body font-medium transition-all duration-300 ${
                   activeTab === 'orders'
                     ? 'bg-honey text-white'
-                    : 'text-chestnut hover:bg-rice'
+                    : 'text-chestnut dark:text-injeolmi hover:bg-rice dark:hover:bg-dark-surface'
                 }`}
               >
                 주문 내역
@@ -129,8 +129,8 @@ export default function MyPage() {
           <div className="flex-1">
             {/* 회원정보 탭 */}
             {activeTab === 'info' && (
-              <div className="bg-white rounded-card shadow-warm-sm p-8">
-                <h2 className="font-display text-heading-3 text-chestnut mb-6">
+              <div className="bg-white dark:bg-dark-card rounded-card shadow-warm-sm p-8">
+                <h2 className="font-display text-heading-3 text-chestnut dark:text-cream mb-6">
                   회원정보
                 </h2>
 
@@ -165,7 +165,7 @@ export default function MyPage() {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-8 border-t border-injeolmi">
+                <div className="mt-8 pt-8 border-t border-injeolmi dark:border-chestnut-light">
                   <Button
                     variant="danger"
                     onClick={handleLogout}
@@ -178,14 +178,14 @@ export default function MyPage() {
 
             {/* 찜 목록 탭 */}
             {activeTab === 'wishlist' && (
-              <div className="bg-white rounded-card shadow-warm-sm p-8">
-                <h2 className="font-display text-heading-3 text-chestnut mb-6">
+              <div className="bg-white dark:bg-dark-card rounded-card shadow-warm-sm p-8">
+                <h2 className="font-display text-heading-3 text-chestnut dark:text-cream mb-6">
                   찜 목록
                 </h2>
 
                 {wishlistProducts.length === 0 ? (
                   <div className="text-center py-12">
-                    <p className="text-body text-chestnut-light mb-4">
+                    <p className="text-body text-chestnut-light dark:text-caramel mb-4">
                       찜한 상품이 없습니다
                     </p>
                     <Link href="/products">
@@ -199,7 +199,7 @@ export default function MyPage() {
                     {wishlistProducts.map(product => (
                       <div
                         key={product.id}
-                        className="bg-rice rounded-card overflow-hidden shadow-warm-sm hover:shadow-warm-hover transition-all duration-300"
+                        className="bg-rice dark:bg-dark-surface rounded-card overflow-hidden shadow-warm-sm hover:shadow-warm-hover transition-all duration-300"
                       >
                         {/* 상품 이미지 */}
                         <Link href={`/products/${product.id}`}>
@@ -217,14 +217,14 @@ export default function MyPage() {
                         {/* 상품 정보 */}
                         <div className="p-4">
                           <Link href={`/products/${product.id}`}>
-                            <h3 className="font-body font-medium text-body text-chestnut mb-1 hover:text-honey transition-colors">
+                            <h3 className="font-body font-medium text-body text-chestnut dark:text-cream mb-1 hover:text-honey transition-colors">
                               {product.name}
                             </h3>
                           </Link>
                           <p className="text-caption text-caramel mb-3">
                             {product.weight}
                           </p>
-                          <p className="text-body-lg font-bold text-sesame mb-4">
+                          <p className="text-body-lg font-bold text-sesame dark:text-cream mb-4">
                             {formatPrice(product.price)}
                           </p>
 
@@ -247,14 +247,14 @@ export default function MyPage() {
 
             {/* 주문 내역 탭 */}
             {activeTab === 'orders' && (
-              <div className="bg-white rounded-card shadow-warm-sm p-8">
-                <h2 className="font-display text-heading-3 text-chestnut mb-6">
+              <div className="bg-white dark:bg-dark-card rounded-card shadow-warm-sm p-8">
+                <h2 className="font-display text-heading-3 text-chestnut dark:text-cream mb-6">
                   주문 내역
                 </h2>
 
                 {orders.length === 0 ? (
                   <div className="text-center py-12">
-                    <p className="text-body text-chestnut-light mb-4">
+                    <p className="text-body text-chestnut-light dark:text-caramel mb-4">
                       주문 내역이 없습니다
                     </p>
                     <Link href="/products">
@@ -268,7 +268,7 @@ export default function MyPage() {
                     {orders.map((order, index) => (
                       <div
                         key={order.id || index}
-                        className="border border-injeolmi rounded-card p-6 hover:border-caramel transition-all duration-300"
+                        className="border border-injeolmi dark:border-chestnut-light rounded-card p-6 hover:border-caramel transition-all duration-300"
                       >
                         <div className="flex justify-between items-start mb-4">
                           <div>
@@ -293,7 +293,7 @@ export default function MyPage() {
                         </div>
 
                         {/* 주문 상품 목록 */}
-                        <div className="border-t border-injeolmi pt-4 space-y-2">
+                        <div className="border-t border-injeolmi dark:border-chestnut-light pt-4 space-y-2">
                           {order.items?.map((item, idx) => (
                             <div key={idx} className="flex justify-between">
                               <span className="text-body text-chestnut">
@@ -307,7 +307,7 @@ export default function MyPage() {
                         </div>
 
                         {/* 총 금액 */}
-                        <div className="border-t border-injeolmi mt-4 pt-4 flex justify-between items-center">
+                        <div className="border-t border-injeolmi dark:border-chestnut-light mt-4 pt-4 flex justify-between items-center">
                           <span className="text-body-lg font-bold text-chestnut">
                             총 금액
                           </span>

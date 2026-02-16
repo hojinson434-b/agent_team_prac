@@ -23,7 +23,7 @@ export default function VendorDetailPage() {
   // 업체를 찾지 못한 경우
   if (!vendor) {
     return (
-      <main className="bg-cream min-h-screen">
+      <main className="bg-cream dark:bg-dark-bg min-h-screen">
         <div className="max-w-wide mx-auto px-4 md:px-6 lg:px-8 py-12">
           <div className="text-center py-16">
             <h1 className="font-display text-heading-2 text-chestnut mb-4">
@@ -45,13 +45,13 @@ export default function VendorDetailPage() {
   }
 
   return (
-    <main className="bg-cream min-h-screen">
+    <main className="bg-cream dark:bg-dark-bg min-h-screen">
       <div className="max-w-wide mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12">
         {/* 업체 정보 섹션 */}
-        <div className="bg-white rounded-card shadow-warm-sm p-6 md:p-8 mb-12">
+        <div className="bg-white dark:bg-dark-card rounded-card shadow-warm-sm p-6 md:p-8 mb-12">
           <div className="flex flex-col md:flex-row gap-6 md:gap-8">
             {/* 업체 이미지 */}
-            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-card overflow-hidden flex-shrink-0 bg-rice mx-auto md:mx-0">
+            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-card overflow-hidden flex-shrink-0 bg-rice dark:bg-dark-surface mx-auto md:mx-0">
               <Image
                 src={vendor.image}
                 alt={vendor.name}
@@ -80,7 +80,7 @@ export default function VendorDetailPage() {
               </p>
 
               {/* 업체 설명 */}
-              <p className="text-body text-sesame mb-6 leading-relaxed">
+              <p className="text-body text-sesame dark:text-injeolmi mb-6 leading-relaxed">
                 {vendor.description}
               </p>
 
@@ -97,14 +97,14 @@ export default function VendorDetailPage() {
 
               {/* 대표 상품 */}
               <div>
-                <h3 className="text-body font-body font-semibold text-chestnut mb-3">
+                <h3 className="text-body font-body font-semibold text-chestnut dark:text-cream mb-3">
                   대표 상품
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {vendor.specialties.map((specialty, index) => (
                     <span
                       key={index}
-                      className="bg-injeolmi text-chestnut text-body font-body rounded-full px-4 py-2"
+                      className="bg-injeolmi dark:bg-dark-surface text-chestnut dark:text-cream text-body font-body rounded-full px-4 py-2"
                     >
                       {specialty}
                     </span>
@@ -124,7 +124,7 @@ export default function VendorDetailPage() {
           {vendorProducts.length > 0 ? (
             <ProductGrid products={vendorProducts} />
           ) : (
-            <div className="text-center py-16 bg-white rounded-card shadow-warm-sm">
+            <div className="text-center py-16 bg-white dark:bg-dark-card rounded-card shadow-warm-sm">
               <p className="text-body text-caramel">
                 아직 등록된 상품이 없습니다.
               </p>

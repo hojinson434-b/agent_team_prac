@@ -14,26 +14,26 @@
   }
 
   body {
-    @apply bg-cream font-body text-sesame;
+    @apply bg-cream dark:bg-dark-bg font-body text-sesame dark:text-cream;
     min-height: 100vh;
     overflow-x: hidden;
   }
 
   /* 제목 태그 기본 스타일 */
   h1 {
-    @apply font-display text-heading-1 text-chestnut;
+    @apply font-display text-heading-1 text-chestnut dark:text-cream;
   }
 
   h2 {
-    @apply font-display text-heading-2 text-chestnut;
+    @apply font-display text-heading-2 text-chestnut dark:text-cream;
   }
 
   h3 {
-    @apply font-display text-heading-3 text-chestnut;
+    @apply font-display text-heading-3 text-chestnut dark:text-cream;
   }
 
   h4 {
-    @apply font-display text-heading-4 text-chestnut;
+    @apply font-display text-heading-4 text-chestnut dark:text-cream;
   }
 
   /* 링크 기본 스타일 */
@@ -55,7 +55,7 @@
 
   /* 포커스 아웃라인 제거 및 커스텀 */
   *:focus {
-    @apply outline-none ring-2 ring-honey/50 ring-offset-2 ring-offset-cream;
+    @apply outline-none ring-2 ring-honey/50 ring-offset-2 ring-offset-cream dark:ring-offset-dark-bg;
   }
 
   /* 이미지 기본 스타일 */
@@ -64,13 +64,22 @@
   }
 }
 
-/* 텍스트 선택 스타일 */
+/* 텍스트 선택 스타일 — 다크모드에서도 가독성 유지 */
 ::selection {
   @apply bg-honey text-white;
 }
 
 ::-moz-selection {
   @apply bg-honey text-white;
+}
+
+/* 다크모드 선택 스타일 */
+.dark ::selection {
+  @apply bg-mugwort text-white;
+}
+
+.dark ::-moz-selection {
+  @apply bg-mugwort text-white;
 }
 
 /* 스크롤바 커스텀 - Webkit 브라우저 */
@@ -108,31 +117,32 @@
   }
 
   .btn-secondary {
-    @apply border-2 border-caramel text-chestnut font-body font-medium px-8 py-3 rounded-button;
+    @apply border-2 border-caramel text-chestnut dark:text-injeolmi font-body font-medium px-8 py-3 rounded-button;
     @apply hover:bg-caramel hover:text-white hover:border-caramel;
+    @apply dark:border-chestnut-light dark:hover:bg-chestnut-light dark:hover:text-cream;
     @apply transition-all duration-300;
   }
 
   .btn-ghost {
-    @apply text-chestnut font-body font-medium px-6 py-2 rounded-button;
-    @apply hover:bg-rice;
+    @apply text-chestnut dark:text-injeolmi font-body font-medium px-6 py-2 rounded-button;
+    @apply hover:bg-rice dark:hover:bg-dark-surface;
     @apply transition-all duration-300;
   }
 
   /* 카드 스타일 */
   .card {
-    @apply bg-white rounded-card shadow-warm-sm overflow-hidden;
+    @apply bg-white dark:bg-dark-card rounded-card shadow-warm-sm overflow-hidden;
     @apply hover:shadow-warm-hover hover:-translate-y-1;
     @apply transition-all duration-300;
   }
 
   .card-simple {
-    @apply bg-injeolmi rounded-card p-6 shadow-warm-sm;
+    @apply bg-injeolmi dark:bg-dark-surface rounded-card p-6 shadow-warm-sm;
   }
 
   /* 입력 필드 스타일 */
   .input-field {
-    @apply w-full h-12 px-4 border border-neutral-300 rounded-xl font-body text-sesame;
+    @apply w-full h-12 px-4 border border-neutral-300 dark:border-chestnut-light rounded-xl font-body text-sesame dark:text-cream dark:bg-dark-card;
     @apply focus:border-caramel focus:ring-2 focus:ring-caramel/20 outline-none;
     @apply transition-all duration-300;
   }
@@ -152,7 +162,7 @@
 
   /* 페이지 레이아웃 */
   .page-wrapper {
-    @apply bg-cream min-h-screen;
+    @apply bg-cream dark:bg-dark-bg min-h-screen;
   }
 
   /* 배지 스타일 */
@@ -161,15 +171,15 @@
   }
 
   .badge-primary {
-    @apply bg-honey/10 text-honey border border-honey/20;
+    @apply bg-honey/10 text-honey border border-honey/20 dark:bg-honey/20 dark:border-honey/30;
   }
 
   .badge-success {
-    @apply bg-mugwort/10 text-mugwort border border-mugwort/20;
+    @apply bg-mugwort/10 text-mugwort border border-mugwort/20 dark:bg-mugwort/20 dark:border-mugwort/30;
   }
 
   .badge-danger {
-    @apply bg-redbean/10 text-redbean border border-redbean/20;
+    @apply bg-redbean/10 text-redbean border border-redbean/20 dark:bg-redbean/20 dark:border-redbean/30;
   }
 }
 
@@ -264,9 +274,17 @@
   }
 }
 
-/* 다크 모드 대비 (추후 확장 가능) */
-@media (prefers-color-scheme: dark) {
-  /* 필요 시 다크 모드 스타일 추가 */
+/* 다크 모드 스크롤바 */
+.dark ::-webkit-scrollbar-track {
+  @apply bg-dark-bg;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-chestnut-light;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  @apply bg-caramel;
 }
 
 /* 모션 감소 설정 준수 */

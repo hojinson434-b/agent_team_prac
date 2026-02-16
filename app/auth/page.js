@@ -152,23 +152,23 @@ export default function AuthPage() {
   }
 
   return (
-    <main className="bg-cream min-h-screen py-12 px-4">
+    <main className="bg-cream dark:bg-dark-bg min-h-screen py-12 px-4">
       <div className="max-w-md mx-auto">
         {/* 로고 */}
         <div className="text-center mb-8">
           <Link
             href="/"
-            className="font-display text-heading-2 text-chestnut hover:text-honey transition-colors duration-300"
+            className="font-display text-heading-2 text-chestnut dark:text-cream hover:text-honey transition-colors duration-300"
           >
             떡담
           </Link>
-          <p className="text-body text-chestnut-light mt-2">
+          <p className="text-body text-chestnut-light dark:text-caramel mt-2">
             떡을 담다
           </p>
         </div>
 
         {/* 인증 카드 */}
-        <div className="bg-white rounded-card shadow-warm-md overflow-hidden">
+        <div className="bg-white dark:bg-dark-card rounded-card shadow-warm-md overflow-hidden">
           {/* 탭 */}
           <div className="flex">
             <button
@@ -179,7 +179,7 @@ export default function AuthPage() {
               className={`flex-1 py-4 text-body font-medium transition-all duration-300 ${
                 activeTab === 'login'
                   ? 'bg-honey text-white'
-                  : 'bg-rice text-chestnut hover:bg-injeolmi'
+                  : 'bg-rice dark:bg-dark-surface text-chestnut dark:text-injeolmi hover:bg-injeolmi dark:hover:bg-chestnut-light'
               }`}
             >
               로그인
@@ -192,7 +192,7 @@ export default function AuthPage() {
               className={`flex-1 py-4 text-body font-medium transition-all duration-300 ${
                 activeTab === 'signup'
                   ? 'bg-honey text-white'
-                  : 'bg-rice text-chestnut hover:bg-injeolmi'
+                  : 'bg-rice dark:bg-dark-surface text-chestnut dark:text-injeolmi hover:bg-injeolmi dark:hover:bg-chestnut-light'
               }`}
             >
               회원가입
@@ -204,7 +204,7 @@ export default function AuthPage() {
             {/* 공통 에러 메시지 */}
             {errors.general && (
               <div
-                className="mb-6 p-4 bg-redbean/10 border border-redbean rounded-button text-redbean text-body"
+                className="mb-6 p-4 bg-redbean/10 dark:bg-redbean/20 border border-redbean rounded-button text-redbean text-body"
                 role="alert"
               >
                 {errors.general}
@@ -308,7 +308,7 @@ export default function AuthPage() {
             {/* 안내 문구 */}
             <div className="mt-6 text-center">
               {activeTab === 'login' ? (
-                <p className="text-caption text-chestnut-light">
+                <p className="text-caption text-chestnut-light dark:text-caramel">
                   계정이 없으신가요?{' '}
                   <button
                     onClick={() => {
@@ -321,7 +321,7 @@ export default function AuthPage() {
                   </button>
                 </p>
               ) : (
-                <p className="text-caption text-chestnut-light">
+                <p className="text-caption text-chestnut-light dark:text-caramel">
                   이미 계정이 있으신가요?{' '}
                   <button
                     onClick={() => {

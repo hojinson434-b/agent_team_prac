@@ -21,7 +21,7 @@ export default function ComparePage() {
     .filter(Boolean)
 
   return (
-    <main className="bg-cream min-h-screen">
+    <main className="bg-cream dark:bg-dark-bg min-h-screen">
       <div className="max-w-wide mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12">
         {/* 페이지 제목 */}
         <div className="flex items-center justify-between mb-8">
@@ -42,7 +42,7 @@ export default function ComparePage() {
 
         {/* 비교 목록이 비어있을 때 */}
         {compareProducts.length === 0 ? (
-          <div className="bg-white rounded-card p-12 shadow-warm-sm text-center">
+          <div className="bg-white dark:bg-dark-card rounded-card p-12 shadow-warm-sm text-center">
             <svg
               className="w-24 h-24 mx-auto mb-6 text-injeolmi"
               fill="none"
@@ -81,7 +81,7 @@ export default function ComparePage() {
               return (
                 <div
                   key={product.id}
-                  className="bg-white rounded-card shadow-warm-sm overflow-hidden flex flex-col"
+                  className="bg-white dark:bg-dark-card rounded-card shadow-warm-sm overflow-hidden flex flex-col"
                 >
                   {/* 상품 이미지 */}
                   <div className="relative aspect-[4/3] w-full">
@@ -97,7 +97,7 @@ export default function ComparePage() {
                   {/* 상품 정보 */}
                   <div className="p-4 flex-grow flex flex-col">
                     {/* 상품명 */}
-                    <h3 className="text-body-lg font-body font-semibold text-chestnut mb-2">
+                    <h3 className="text-body-lg font-body font-semibold text-chestnut dark:text-cream mb-2">
                       {product.name}
                     </h3>
 
@@ -119,7 +119,7 @@ export default function ComparePage() {
                       {/* 업체 */}
                       <div>
                         <p className="text-caption text-sesame mb-1">업체</p>
-                        <p className="text-body font-body text-chestnut">
+                        <p className="text-body font-body text-chestnut dark:text-cream">
                           {vendor?.name || '-'}
                         </p>
                       </div>
@@ -127,7 +127,7 @@ export default function ComparePage() {
                       {/* 중량 */}
                       <div>
                         <p className="text-caption text-sesame mb-1">중량</p>
-                        <p className="text-body font-body text-chestnut">
+                        <p className="text-body font-body text-chestnut dark:text-cream">
                           {product.weight}
                         </p>
                       </div>
@@ -168,7 +168,7 @@ export default function ComparePage() {
                       {/* 카테고리 */}
                       <div>
                         <p className="text-caption text-sesame mb-1">카테고리</p>
-                        <p className="text-body font-body text-chestnut">
+                        <p className="text-body font-body text-chestnut dark:text-cream">
                           {product.category === 'traditional' && '전통떡'}
                           {product.category === 'seasonal' && '계절떡'}
                           {product.category === 'premium' && '프리미엄'}
@@ -185,7 +185,7 @@ export default function ComparePage() {
                             {product.tags.map((tag, index) => (
                               <span
                                 key={index}
-                                className="inline-block px-2 py-1 bg-rice text-caption text-caramel rounded-button"
+                                className="inline-block px-2 py-1 bg-rice dark:bg-dark-surface text-caption text-caramel rounded-button"
                               >
                                 #{tag}
                               </span>

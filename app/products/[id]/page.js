@@ -32,7 +32,7 @@ export default function ProductDetailPage() {
   // 상품을 찾지 못한 경우
   if (!product) {
     return (
-      <main className="bg-cream min-h-screen">
+      <main className="bg-cream dark:bg-dark-bg min-h-screen">
         <div className="max-w-content mx-auto px-4 md:px-6 lg:px-8 py-16">
           <div className="text-center">
             <svg
@@ -125,12 +125,12 @@ export default function ProductDetailPage() {
   }
 
   return (
-    <main className="bg-cream min-h-screen">
+    <main className="bg-cream dark:bg-dark-bg min-h-screen">
       {/* 상품 상세 섹션 */}
       <div className="max-w-wide mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
           {/* 좌: 이미지 */}
-          <div className="relative aspect-square bg-white rounded-card shadow-warm-sm overflow-hidden">
+          <div className="relative aspect-square bg-white dark:bg-dark-card rounded-card shadow-warm-sm overflow-hidden">
             <Image
               src={imageError ? 'https://placehold.co/800x800/FDF6EC/8B4513?text=떡' : product.image}
               alt={product.name}
@@ -170,12 +170,12 @@ export default function ProductDetailPage() {
             </h1>
 
             {/* 영문명 */}
-            <p className="font-accent text-body text-chestnut-light mb-4">
+            <p className="font-accent text-body text-chestnut-light dark:text-caramel mb-4">
               {product.nameEn}
             </p>
 
             {/* 평점 */}
-            <div className="flex items-center gap-2 mb-6 pb-6 border-b border-injeolmi">
+            <div className="flex items-center gap-2 mb-6 pb-6 border-b border-injeolmi dark:border-chestnut-light">
               <span className="flex text-body-lg">{renderStars()}</span>
               <span className="text-body text-chestnut font-medium">
                 {product.rating.toFixed(1)}
@@ -197,14 +197,14 @@ export default function ProductDetailPage() {
                   </span>
                 </div>
               )}
-              <div className="text-heading-2 font-bold text-chestnut">
+              <div className="text-heading-2 font-bold text-chestnut dark:text-cream">
                 {formatPrice(product.price)}
               </div>
             </div>
 
             {/* 설명 */}
-            <div className="mb-6 pb-6 border-b border-injeolmi">
-              <p className="text-body text-chestnut-light leading-relaxed">
+            <div className="mb-6 pb-6 border-b border-injeolmi dark:border-chestnut-light">
+              <p className="text-body text-chestnut-light dark:text-caramel leading-relaxed">
                 {product.description}
               </p>
             </div>
@@ -213,7 +213,7 @@ export default function ProductDetailPage() {
             <div className="mb-6">
               <div className="flex items-center gap-3">
                 <span className="text-body text-caramel font-medium">중량</span>
-                <span className="text-body text-chestnut font-bold">
+                <span className="text-body text-chestnut dark:text-cream font-bold">
                   {product.weight}
                 </span>
               </div>
@@ -226,7 +226,7 @@ export default function ProductDetailPage() {
                   {product.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 bg-cream text-caramel text-caption rounded-full"
+                      className="px-3 py-1 bg-cream dark:bg-dark-surface text-caramel text-caption rounded-full"
                     >
                       #{tag}
                     </span>
@@ -243,19 +243,19 @@ export default function ProductDetailPage() {
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => handleQuantityChange(-1)}
-                  className="w-10 h-10 flex items-center justify-center border border-injeolmi rounded-lg hover:border-honey hover:text-honey transition-colors"
+                  className="w-10 h-10 flex items-center justify-center border border-injeolmi dark:border-chestnut-light rounded-lg hover:border-honey hover:text-honey transition-colors"
                   aria-label="수량 감소"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
                   </svg>
                 </button>
-                <span className="text-body-lg font-bold text-chestnut min-w-[3rem] text-center">
+                <span className="text-body-lg font-bold text-chestnut dark:text-cream min-w-[3rem] text-center">
                   {quantity}
                 </span>
                 <button
                   onClick={() => handleQuantityChange(1)}
-                  className="w-10 h-10 flex items-center justify-center border border-injeolmi rounded-lg hover:border-honey hover:text-honey transition-colors"
+                  className="w-10 h-10 flex items-center justify-center border border-injeolmi dark:border-chestnut-light rounded-lg hover:border-honey hover:text-honey transition-colors"
                   aria-label="수량 증가"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

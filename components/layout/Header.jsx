@@ -37,8 +37,8 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-40 transition-all duration-300 border-b border-injeolmi ${
-        isScrolled ? 'bg-cream/95 backdrop-blur-sm shadow-warm-sm' : 'bg-cream'
+      className={`sticky top-0 z-40 transition-all duration-300 border-b border-injeolmi dark:border-chestnut-light ${
+        isScrolled ? 'bg-cream/95 dark:bg-dark-bg/95 backdrop-blur-sm shadow-warm-sm' : 'bg-cream dark:bg-dark-bg'
       }`}
     >
       <div className="max-w-wide mx-auto px-4 md:px-6 lg:px-8">
@@ -46,7 +46,7 @@ export default function Header() {
           {/* 로고 */}
           <Link
             href="/"
-            className="font-display text-heading-3 text-chestnut hover:text-redbean transition-colors"
+            className="font-display text-heading-3 text-chestnut dark:text-cream hover:text-redbean transition-colors"
           >
             떡담
           </Link>
@@ -57,7 +57,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-body text-body text-sesame hover:text-chestnut transition-colors"
+                className="font-body text-body text-sesame dark:text-injeolmi hover:text-chestnut dark:hover:text-cream transition-colors"
               >
                 {link.label}
               </Link>
@@ -69,7 +69,7 @@ export default function Header() {
             {/* 테마 전환 버튼 (데스크톱만) */}
             <button
               onClick={toggleTheme}
-              className="hidden md:flex items-center justify-center w-10 h-10 rounded-full hover:bg-injeolmi transition-colors"
+              className="hidden md:flex items-center justify-center w-10 h-10 rounded-full hover:bg-injeolmi dark:hover:bg-dark-surface transition-colors"
               aria-label={`${theme === 'dark' ? '라이트' : '다크'} 모드로 전환`}
             >
               {theme === 'dark' ? (
@@ -90,11 +90,11 @@ export default function Header() {
             {/* 장바구니 버튼 */}
             <Link
               href="/cart"
-              className="relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-injeolmi transition-colors"
+              className="relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-injeolmi dark:hover:bg-dark-surface transition-colors"
               aria-label={`장바구니 ${cartCount}개 상품`}
             >
               <svg
-                className="w-6 h-6 text-sesame"
+                className="w-6 h-6 text-sesame dark:text-cream"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -119,11 +119,11 @@ export default function Header() {
             {/* 로그인/마이페이지 버튼 (데스크톱만) */}
             <Link
               href={user ? '/mypage' : '/login'}
-              className="hidden md:flex items-center justify-center w-10 h-10 rounded-full hover:bg-injeolmi transition-colors"
+              className="hidden md:flex items-center justify-center w-10 h-10 rounded-full hover:bg-injeolmi dark:hover:bg-dark-surface transition-colors"
               aria-label={user ? '마이페이지' : '로그인'}
             >
               <svg
-                className="w-6 h-6 text-sesame"
+                className="w-6 h-6 text-sesame dark:text-cream"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -140,11 +140,11 @@ export default function Header() {
             {/* 햄버거 메뉴 버튼 (모바일/태블릿) */}
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-injeolmi transition-colors"
+              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-injeolmi dark:hover:bg-dark-surface transition-colors"
               aria-label="메뉴 열기"
             >
               <svg
-                className="w-6 h-6 text-sesame"
+                className="w-6 h-6 text-sesame dark:text-cream"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

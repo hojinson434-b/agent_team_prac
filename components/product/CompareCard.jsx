@@ -31,9 +31,9 @@ export default function CompareCard({ product }) {
   }
 
   return (
-    <div className="bg-white rounded-card shadow-warm-sm p-4">
+    <div className="bg-white dark:bg-dark-card rounded-card shadow-warm-sm p-4">
       {/* 이미지 */}
-      <div className="relative aspect-square bg-cream rounded-lg overflow-hidden mb-4">
+      <div className="relative aspect-square bg-cream dark:bg-dark-surface rounded-lg overflow-hidden mb-4">
         <Image
           src={imageError ? 'https://placehold.co/400x400/FDF6EC/8B4513?text=떡' : product.image}
           alt={product.name}
@@ -48,7 +48,7 @@ export default function CompareCard({ product }) {
       {/* 상품 정보 */}
       <div className="space-y-3">
         {/* 상품명 */}
-        <h3 className="font-body font-bold text-body text-chestnut line-clamp-2 min-h-[48px]">
+        <h3 className="font-body font-bold text-body text-chestnut dark:text-cream line-clamp-2 min-h-[48px]">
           {product.name}
         </h3>
 
@@ -65,11 +65,11 @@ export default function CompareCard({ product }) {
         </div>
 
         {/* 정보 테이블 */}
-        <div className="border-t border-injeolmi pt-3 space-y-2">
+        <div className="border-t border-injeolmi dark:border-chestnut-light pt-3 space-y-2">
           {/* 업체명 */}
           <div className="flex justify-between text-small">
             <span className="text-caramel">업체</span>
-            <span className="text-chestnut font-medium">
+            <span className="text-chestnut dark:text-cream font-medium">
               {vendor ? vendor.name : '-'}
             </span>
           </div>
@@ -77,7 +77,7 @@ export default function CompareCard({ product }) {
           {/* 중량 */}
           <div className="flex justify-between text-small">
             <span className="text-caramel">중량</span>
-            <span className="text-chestnut font-medium">{product.weight}</span>
+            <span className="text-chestnut dark:text-cream font-medium">{product.weight}</span>
           </div>
 
           {/* 평점 */}
@@ -85,7 +85,7 @@ export default function CompareCard({ product }) {
             <span className="text-caramel">평점</span>
             <span className="flex items-center gap-1">
               <span className="flex text-small">{renderStars()}</span>
-              <span className="text-chestnut font-medium">
+              <span className="text-chestnut dark:text-cream font-medium">
                 {product.rating.toFixed(1)}
               </span>
             </span>
@@ -94,7 +94,7 @@ export default function CompareCard({ product }) {
           {/* 카테고리 */}
           <div className="flex justify-between text-small">
             <span className="text-caramel">카테고리</span>
-            <span className="text-chestnut font-medium">
+            <span className="text-chestnut dark:text-cream font-medium">
               {category ? category.name : '-'}
             </span>
           </div>

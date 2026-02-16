@@ -107,7 +107,7 @@ export default function VendorRegisterForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-card shadow-warm-sm p-6 md:p-8">
+    <form onSubmit={handleSubmit} className="bg-white dark:bg-dark-card rounded-card shadow-warm-sm p-6 md:p-8">
       {/* 2컬럼 그리드 (모바일은 1컬럼) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         {/* 업체명 */}
@@ -187,7 +187,7 @@ export default function VendorRegisterForm() {
       <div className="mb-6">
         <label
           htmlFor="specialties"
-          className="block text-body font-body font-medium text-chestnut mb-2"
+          className="block text-body font-body font-medium text-chestnut dark:text-cream mb-2"
         >
           대표 상품
         </label>
@@ -198,7 +198,7 @@ export default function VendorRegisterForm() {
           onChange={handleChange}
           placeholder="예: 송편, 인절미, 백설기 등 (쉼표로 구분)"
           rows="3"
-          className="w-full px-4 py-3 border border-injeolmi rounded-button font-body text-body text-sesame bg-white focus:outline-none focus:border-caramel focus:ring-2 focus:ring-caramel/20 transition-all duration-200 placeholder:text-caramel/50"
+          className="w-full px-4 py-3 border border-injeolmi dark:border-chestnut-light rounded-button font-body text-body text-sesame dark:text-cream bg-white dark:bg-dark-card focus:outline-none focus:border-caramel focus:ring-2 focus:ring-caramel/20 transition-all duration-200 placeholder:text-caramel/50"
         />
       </div>
 
@@ -206,7 +206,7 @@ export default function VendorRegisterForm() {
       <div className="mb-8">
         <label
           htmlFor="description"
-          className="block text-body font-body font-medium text-chestnut mb-2"
+          className="block text-body font-body font-medium text-chestnut dark:text-cream mb-2"
         >
           업체 소개
         </label>
@@ -217,7 +217,7 @@ export default function VendorRegisterForm() {
           onChange={handleChange}
           placeholder="업체의 특징, 강점, 전통 등을 자유롭게 작성해주세요."
           rows="5"
-          className="w-full px-4 py-3 border border-injeolmi rounded-button font-body text-body text-sesame bg-white focus:outline-none focus:border-caramel focus:ring-2 focus:ring-caramel/20 transition-all duration-200 placeholder:text-caramel/50"
+          className="w-full px-4 py-3 border border-injeolmi dark:border-chestnut-light rounded-button font-body text-body text-sesame dark:text-cream bg-white dark:bg-dark-card focus:outline-none focus:border-caramel focus:ring-2 focus:ring-caramel/20 transition-all duration-200 placeholder:text-caramel/50"
         />
       </div>
 

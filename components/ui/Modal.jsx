@@ -66,13 +66,13 @@ export default function Modal({
     >
       {/* 모달 본체 */}
       <div
-        className={`bg-white rounded-card shadow-warm-lg mx-4 max-h-[90vh] overflow-y-auto w-full ${sizes[size]}`}
+        className={`bg-white dark:bg-dark-card rounded-card shadow-warm-lg mx-4 max-h-[90vh] overflow-y-auto w-full ${sizes[size]}`}
       >
         {/* 헤더 */}
-        <div className="flex items-center justify-between p-6 border-b border-injeolmi">
+        <div className="flex items-center justify-between p-6 border-b border-injeolmi dark:border-chestnut-light">
           <h2
             id="modal-title"
-            className="text-heading-3 font-display text-chestnut"
+            className="text-heading-3 font-display text-chestnut dark:text-cream"
           >
             {title}
           </h2>
@@ -80,7 +80,7 @@ export default function Modal({
           {/* 닫기 버튼 */}
           <button
             onClick={onClose}
-            className="text-sesame hover:text-chestnut transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-caramel rounded-button p-1"
+            className="text-sesame dark:text-injeolmi hover:text-chestnut dark:hover:text-cream transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-caramel rounded-button p-1"
             aria-label="모달 닫기"
           >
             <svg
