@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function VendorsPage() {
   return (
-    <main className="bg-cream min-h-screen">
+    <main className="bg-cream dark:bg-dark-bg min-h-screen">
       <div className="max-w-wide mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12">
         {/* 헤더: 제목 + 입점 신청 버튼 */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-8">

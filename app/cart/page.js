@@ -14,7 +14,7 @@ export default function CartPage() {
   const { cartItems, clearCart } = useCart()
 
   return (
-    <main className="bg-cream min-h-screen">
+    <main className="bg-cream dark:bg-dark-bg min-h-screen">
       <div className="max-w-wide mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12">
         {/* 페이지 제목 */}
         <h1 className="text-heading-1 font-display text-chestnut mb-8">
@@ -23,7 +23,7 @@ export default function CartPage() {
 
         {/* 장바구니가 비어있을 때 */}
         {cartItems.length === 0 ? (
-          <div className="bg-white rounded-card p-12 shadow-warm-sm text-center">
+          <div className="bg-white dark:bg-dark-card rounded-card p-12 shadow-warm-sm text-center">
             <svg
               className="w-24 h-24 mx-auto mb-6 text-injeolmi"
               fill="none"
@@ -59,7 +59,7 @@ export default function CartPage() {
             <div className="lg:col-span-2">
               {/* 전체 삭제 버튼 */}
               <div className="flex items-center justify-between mb-4">
-                <p className="text-body text-sesame">
+                <p className="text-body text-sesame dark:text-injeolmi">
                   총 <span className="font-semibold text-honey">{cartItems.length}</span>개 상품
                 </p>
                 <button

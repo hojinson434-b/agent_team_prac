@@ -1,9 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 
-// 떡담 (Tteokdam) - 韓모던 디자인 시스템
-// 전통 한국의 따뜻함 + 현대적 미니멀리즘
+// 떡담 (Tteokdam) - 봄 꽃떡 디자인 시스템
+// 화사한 봄꽃 + 로맨틱 모던
 
 module.exports = {
+  darkMode: 'class', // 다크모드: ThemeContext에서 document.documentElement에 'dark' 클래스 토글
   content: [
     "./pages/**/*.{js,jsx,mdx}",
     "./components/**/*.{js,jsx,mdx}",
@@ -11,34 +12,39 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // 커스텀 색상 - 한국 전통 식재료 색상 팔레트
+      // 커스텀 색상 - 봄 꽃떡 팔레트
       colors: {
         // 주요 배경색
-        cream: '#FFF8F0',          // 미색 - 메인 배경
-        rice: '#F5EDE0',           // 쌀색 - 보조 배경
+        cream: '#FFF5F5',          // 연분홍 - 메인 배경 (꽃잎)
+        rice: '#FFF0F3',           // 밝은 로즈 - 보조 배경
 
         // 텍스트 색상
-        chestnut: '#5C3A1E',       // 밤색 - 주요 텍스트
-        'chestnut-light': '#8B6242', // 밤색 밝은 - 보조 텍스트
-        sesame: '#2C2C2C',         // 참깨색 - 다크 텍스트
+        chestnut: '#4A2040',       // 자주 - 주요 텍스트 (진달래)
+        'chestnut-light': '#7A5075', // 연자주 - 보조 텍스트
+        sesame: '#2D1F2D',         // 다크 플럼 - 다크 텍스트
 
         // 포인트 색상
-        redbean: '#8B3A3A',        // 팥색 - 주요 포인트
-        mugwort: '#4A7C59',        // 쑥색 - 자연/신선 강조
-        honey: '#D4A847',          // 꿀색 - CTA 버튼, 강조
-        gold: '#D4A847',           // 금색 (honey 별칭)
+        redbean: '#C04B6D',        // 딥로즈 - 주요 포인트 (동백)
+        mugwort: '#9B7DB8',        // 라벤더 - 보조 강조 (도라지꽃)
+        honey: '#E8788A',          // 복숭아 - CTA 버튼 (복사꽃)
+        gold: '#E8788A',           // (honey 별칭)
 
         // 보조 색상
-        injeolmi: '#E8D5B7',       // 인절미색 - 카드 배경
-        songpyeon: '#7BA784',      // 송편색 - 보조 강조
-        caramel: '#C4956A',        // 카라멜 - 테두리, 호버
+        injeolmi: '#F5DDE0',       // 연꽃잎 - 카드 배경/보더
+        songpyeon: '#B8A9D4',      // 연보라 - 보조 강조 (라일락)
+        caramel: '#D4A0B0',        // 모란 - 테두리, 호버
+
+        // 다크모드 전용 색상
+        'dark-bg': '#1A1118',       // 가장 어두운 배경
+        'dark-card': '#2D1F2D',     // 카드/서피스
+        'dark-surface': '#3D2D3D',  // 약간 밝은 서피스
       },
 
-      // 폰트 패밀리
+      // 폰트 패밀리 - 시스템 폰트 사용
       fontFamily: {
-        display: ['Noto Serif KR', 'serif'],       // 제목/강조
-        body: ['Noto Sans KR', 'sans-serif'],      // 본문/UI
-        accent: ['DM Sans', 'sans-serif'],         // 영문/숫자 보조
+        display: ['serif'],       // 제목/강조
+        body: ['sans-serif'],      // 본문/UI
+        accent: ['sans-serif'],    // 영문/숫자 보조
       },
 
       // 커스텀 폰트 크기
@@ -53,12 +59,12 @@ module.exports = {
         'small': ['0.75rem', { lineHeight: '1.5', fontWeight: '400' }],       // 12px
       },
 
-      // 커스텀 그림자 - 따뜻한 느낌
+      // 커스텀 그림자 - 부드러운 로즈 톤
       boxShadow: {
-        'warm-sm': '0 1px 3px rgba(92, 58, 30, 0.08)',
-        'warm-md': '0 4px 12px rgba(92, 58, 30, 0.12)',
-        'warm-lg': '0 8px 24px rgba(92, 58, 30, 0.16)',
-        'warm-hover': '0 8px 30px rgba(92, 58, 30, 0.2)',
+        'warm-sm': '0 1px 3px rgba(192, 75, 109, 0.08)',
+        'warm-md': '0 4px 12px rgba(192, 75, 109, 0.12)',
+        'warm-lg': '0 8px 24px rgba(192, 75, 109, 0.15)',
+        'warm-hover': '0 8px 30px rgba(192, 75, 109, 0.2)',
       },
 
       // 커스텀 Border Radius

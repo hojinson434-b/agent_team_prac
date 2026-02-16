@@ -51,7 +51,7 @@ export default function MobileMenu({ isOpen, onClose }) {
 
       {/* 메뉴 패널 */}
       <div
-        className={`fixed top-0 right-0 w-80 h-full bg-cream shadow-warm-lg z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 w-80 h-full bg-cream dark:bg-dark-bg shadow-warm-lg z-50 transform transition-transform duration-300 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         role="dialog"
@@ -59,17 +59,17 @@ export default function MobileMenu({ isOpen, onClose }) {
         aria-label="모바일 메뉴"
       >
         {/* 헤더 */}
-        <div className="flex items-center justify-between px-6 h-16 border-b border-injeolmi">
-          <span className="font-display text-heading-3 text-chestnut">떡담</span>
+        <div className="flex items-center justify-between px-6 h-16 border-b border-injeolmi dark:border-chestnut-light">
+          <span className="font-display text-heading-3 text-chestnut dark:text-cream">떡담</span>
 
           {/* 닫기 버튼 */}
           <button
             onClick={onClose}
-            className="p-2 hover:bg-injeolmi rounded-lg transition-colors"
+            className="p-2 hover:bg-injeolmi dark:hover:bg-dark-surface rounded-lg transition-colors"
             aria-label="메뉴 닫기"
           >
             <svg
-              className="w-6 h-6 text-sesame"
+              className="w-6 h-6 text-sesame dark:text-cream"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -91,14 +91,14 @@ export default function MobileMenu({ isOpen, onClose }) {
               key={item.href}
               href={item.href}
               onClick={handleLinkClick}
-              className="block px-4 py-3 font-body text-body text-sesame hover:bg-injeolmi hover:text-chestnut rounded-lg transition-colors"
+              className="block px-4 py-3 font-body text-body text-sesame dark:text-injeolmi hover:bg-injeolmi dark:hover:bg-dark-surface hover:text-chestnut dark:hover:text-cream rounded-lg transition-colors"
             >
               {item.label}
             </Link>
           ))}
 
           {/* 구분선 */}
-          <div className="border-t border-injeolmi my-4" />
+          <div className="border-t border-injeolmi dark:border-chestnut-light my-4" />
 
           {/* 사용자 메뉴 */}
           {user ? (
@@ -106,13 +106,13 @@ export default function MobileMenu({ isOpen, onClose }) {
               <Link
                 href="/mypage"
                 onClick={handleLinkClick}
-                className="block px-4 py-3 font-body text-body text-sesame hover:bg-injeolmi hover:text-chestnut rounded-lg transition-colors"
+                className="block px-4 py-3 font-body text-body text-sesame dark:text-injeolmi hover:bg-injeolmi dark:hover:bg-dark-surface hover:text-chestnut dark:hover:text-cream rounded-lg transition-colors"
               >
                 마이페이지
               </Link>
               <button
                 onClick={handleLogout}
-                className="w-full text-left px-4 py-3 font-body text-body text-sesame hover:bg-injeolmi hover:text-chestnut rounded-lg transition-colors"
+                className="w-full text-left px-4 py-3 font-body text-body text-sesame dark:text-injeolmi hover:bg-injeolmi dark:hover:bg-dark-surface hover:text-chestnut dark:hover:text-cream rounded-lg transition-colors"
               >
                 로그아웃
               </button>
@@ -121,7 +121,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             <Link
               href="/login"
               onClick={handleLinkClick}
-              className="block px-4 py-3 font-body text-body text-sesame hover:bg-injeolmi hover:text-chestnut rounded-lg transition-colors"
+              className="block px-4 py-3 font-body text-body text-sesame dark:text-injeolmi hover:bg-injeolmi dark:hover:bg-dark-surface hover:text-chestnut dark:hover:text-cream rounded-lg transition-colors"
             >
               로그인
             </Link>
@@ -129,13 +129,13 @@ export default function MobileMenu({ isOpen, onClose }) {
         </nav>
 
         {/* 하단 테마 전환 */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-injeolmi">
+        <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-injeolmi dark:border-chestnut-light">
           <button
             onClick={toggleTheme}
-            className="w-full flex items-center justify-between px-4 py-3 bg-white rounded-lg hover:bg-injeolmi transition-colors"
+            className="w-full flex items-center justify-between px-4 py-3 bg-white dark:bg-dark-card rounded-lg hover:bg-injeolmi dark:hover:bg-dark-surface transition-colors"
             aria-label={`${theme === 'dark' ? '라이트' : '다크'} 모드로 전환`}
           >
-            <span className="font-body text-body text-sesame">테마 전환</span>
+            <span className="font-body text-body text-sesame dark:text-cream">테마 전환</span>
             {theme === 'dark' ? (
               <svg className="w-5 h-5 text-honey" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />

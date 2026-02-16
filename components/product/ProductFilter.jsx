@@ -71,7 +71,7 @@ export default function ProductFilter({
                 ${
                   currentCategory === category.id
                     ? 'bg-honey text-white shadow-warm-sm'
-                    : 'bg-white text-chestnut border border-injeolmi hover:border-honey hover:text-honey'
+                    : 'bg-white dark:bg-dark-card text-chestnut dark:text-injeolmi border border-injeolmi dark:border-chestnut-light hover:border-honey hover:text-honey'
                 }
               `}
             >
@@ -82,7 +82,7 @@ export default function ProductFilter({
 
         {/* 정렬 드롭다운 */}
         <div className="flex items-center gap-2">
-          <label htmlFor="sort" className="text-body text-chestnut font-medium whitespace-nowrap">
+          <label htmlFor="sort" className="text-body text-chestnut dark:text-cream font-medium whitespace-nowrap">
             정렬:
           </label>
           <select
@@ -90,8 +90,8 @@ export default function ProductFilter({
             value={currentSort}
             onChange={handleSortChange}
             className="
-              h-12 px-4 pr-10 border border-injeolmi rounded-xl font-body text-body text-chestnut
-              bg-white cursor-pointer
+              h-12 px-4 pr-10 border border-injeolmi dark:border-chestnut-light rounded-xl font-body text-body text-chestnut dark:text-cream
+              bg-white dark:bg-dark-card cursor-pointer
               focus:border-honey focus:ring-2 focus:ring-honey/20 outline-none
               transition-all
             "

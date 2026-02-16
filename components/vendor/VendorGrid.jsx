@@ -8,7 +8,7 @@ export default function VendorGrid({ vendors }) {
   if (!vendors || vendors.length === 0) {
     return (
       <div className="text-center py-16">
-        <p className="text-body text-caramel">등록된 업체가 없습니다.</p>
+        <p className="text-body text-caramel dark:text-injeolmi">등록된 업체가 없습니다.</p>
       </div>
     )
   }

@@ -27,22 +27,22 @@ export default function CartSummary() {
   const remainingForFreeShipping = FREE_SHIPPING_THRESHOLD - productTotal
 
   return (
-    <div className="bg-white rounded-card p-6 shadow-warm-sm sticky top-24">
+    <div className="bg-white dark:bg-dark-card rounded-card p-6 shadow-warm-sm sticky top-24">
       {/* 타이틀 */}
-      <h2 className="text-heading-3 font-display text-chestnut mb-6">
+      <h2 className="text-heading-3 font-display text-chestnut dark:text-cream mb-6">
         주문 요약
       </h2>
 
       {/* 금액 정보 */}
       <div className="space-y-3 mb-6">
         {/* 상품 금액 */}
-        <div className="flex items-center justify-between text-body font-body text-sesame">
+        <div className="flex items-center justify-between text-body font-body text-sesame dark:text-injeolmi">
           <span>상품 금액</span>
           <span>{formatPrice(productTotal)}</span>
         </div>
 
         {/* 배송비 */}
-        <div className="flex items-center justify-between text-body font-body text-sesame">
+        <div className="flex items-center justify-between text-body font-body text-sesame dark:text-injeolmi">
           <span>배송비</span>
           <span className={shippingFee === 0 ? 'text-honey font-semibold' : ''}>
             {shippingFee === 0 ? '무료' : formatPrice(shippingFee)}
@@ -51,16 +51,16 @@ export default function CartSummary() {
 
         {/* 무료배송 안내 */}
         {shippingFee > 0 && remainingForFreeShipping > 0 && (
-          <div className="text-caption text-caramel bg-rice p-3 rounded-button">
+          <div className="text-caption text-caramel bg-rice dark:bg-dark-surface p-3 rounded-button">
             {formatPrice(remainingForFreeShipping)} 더 구매하시면 무료배송!
           </div>
         )}
 
         {/* 구분선 */}
-        <div className="border-t border-injeolmi my-4"></div>
+        <div className="border-t border-injeolmi dark:border-chestnut-light my-4"></div>
 
         {/* 총 결제 금액 */}
-        <div className="flex items-center justify-between text-body-lg font-body font-bold text-chestnut">
+        <div className="flex items-center justify-between text-body-lg font-body font-bold text-chestnut dark:text-cream">
           <span>총 결제 금액</span>
           <span className="text-honey">{formatPrice(finalTotal)}</span>
         </div>
@@ -89,8 +89,8 @@ export default function CartSummary() {
       </div>
 
       {/* 안내 사항 */}
-      <div className="mt-6 p-4 bg-cream rounded-button">
-        <p className="text-caption text-sesame leading-relaxed">
+      <div className="mt-6 p-4 bg-cream dark:bg-dark-surface rounded-button">
+        <p className="text-caption text-sesame dark:text-injeolmi leading-relaxed">
           • 신선한 떡 배송을 위해 주문 후 2~3일 소요됩니다.<br />
           • 명절 기간에는 배송이 지연될 수 있습니다.
         </p>

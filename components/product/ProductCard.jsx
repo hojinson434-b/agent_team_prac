@@ -62,10 +62,10 @@ export default function ProductCard({ product }) {
   }
 
   return (
-    <div className="bg-white rounded-card shadow-warm-sm overflow-hidden hover:shadow-warm-hover hover:-translate-y-1 transition-all duration-300">
+    <div className="group bg-white dark:bg-dark-card rounded-card shadow-warm-sm overflow-hidden hover:shadow-warm-hover hover:-translate-y-1 transition-all duration-300">
       <Link href={`/products/${product.id}`}>
         {/* 이미지 영역 */}
-        <div className="relative aspect-[4/3] bg-cream">
+        <div className="relative aspect-[4/3] bg-cream dark:bg-dark-surface">
           <Image
             src={imageError ? 'https://placehold.co/600x450/FDF6EC/8B4513?text=떡' : product.image}
             alt={product.name}
@@ -76,8 +76,15 @@ export default function ProductCard({ product }) {
             onError={() => setImageError(true)}
           />
 
+          {/* 호버 시 반투명 오버레이 + 바로보기 */}
+          <div className="absolute inset-0 bg-chestnut/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+            <span className="text-white font-body font-medium border border-white rounded-button px-6 py-2">
+              바로보기
+            </span>
+          </div>
+
           {/* 배지 오버레이 */}
-          <div className="absolute top-3 left-3 flex flex-col gap-2">
+          <div className="absolute top-3 left-3 flex flex-col gap-2 z-20">
             {product.isNew && <Badge variant="new">NEW</Badge>}
             {product.isBest && <Badge variant="best">BEST</Badge>}
             {discountRate > 0 && (
@@ -85,15 +92,22 @@ export default function ProductCard({ product }) {
             )}
           </div>
 
+          {/* 업체 배지 — 이미지 하단 좌측 */}
+          {vendor && (
+            <span className="absolute bottom-2 left-2 bg-white/80 dark:bg-dark-card/80 px-2 py-1 rounded text-small text-chestnut dark:text-cream z-20">
+              {vendor.name}
+            </span>
+          )}
+
           {/* 찜 하트 아이콘 */}
           <button
             onClick={handleToggleWishlist}
-            className="absolute top-3 right-3 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors"
+            className="absolute top-3 right-3 w-10 h-10 bg-white/90 dark:bg-dark-surface/90 rounded-full flex items-center justify-center hover:bg-white dark:hover:bg-dark-surface transition-colors z-20"
             aria-label={isWishlisted ? '찜 취소' : '찜하기'}
           >
             <svg
               className={`w-5 h-5 transition-colors ${
-                isWishlisted ? 'fill-redbean text-redbean' : 'fill-none text-chestnut'
+                isWishlisted ? 'fill-redbean text-redbean' : 'fill-none text-chestnut dark:text-caramel'
               }`}
               stroke="currentColor"
               strokeWidth="2"
@@ -110,17 +124,17 @@ export default function ProductCard({ product }) {
         <Link href={`/products/${product.id}`}>
           {/* 업체명 */}
           {vendor && (
-            <p className="text-caption text-caramel mb-1">{vendor.name}</p>
+            <p className="text-caption text-caramel dark:text-caramel mb-1">{vendor.name}</p>
           )}
 
           {/* 상품명 */}
-          <h3 className="text-body font-medium text-chestnut mb-2 line-clamp-2 min-h-[48px]">
+          <h3 className="text-body font-medium text-chestnut dark:text-cream mb-2 line-clamp-2 min-h-[48px]">
             {product.name}
           </h3>
 
-          {/* 가격 */}
+          {/* 가격 + 할인율 강조 */}
           <div className="flex items-baseline gap-2 mb-2">
-            <span className="text-body-lg font-bold text-redbean">
+            <span className="text-body-lg font-bold text-redbean dark:text-honey">
               {formatPrice(product.price)}
             </span>
             {product.originalPrice && (
@@ -128,12 +142,17 @@ export default function ProductCard({ product }) {
                 {formatPrice(product.originalPrice)}
               </span>
             )}
+            {discountRate > 0 && (
+              <span className="text-caption font-bold text-redbean bg-redbean/10 px-2 py-0.5 rounded">
+                {discountRate}%
+              </span>
+            )}
           </div>
 
           {/* 평점 */}
           <div className="flex items-center gap-1 mb-4">
             <span className="flex">{renderStars()}</span>
-            <span className="text-caption text-chestnut">
+            <span className="text-caption text-chestnut dark:text-caramel">
               {product.rating.toFixed(1)} ({product.reviewCount})
             </span>
           </div>

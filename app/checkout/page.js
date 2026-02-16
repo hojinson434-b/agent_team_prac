@@ -78,9 +78,9 @@ export default function CheckoutPage() {
   // 장바구니가 비어있으면
   if (cartItems.length === 0) {
     return (
-      <main className="bg-cream min-h-screen">
+      <main className="bg-cream dark:bg-dark-bg min-h-screen">
         <div className="max-w-wide mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12">
-          <div className="bg-white rounded-card p-12 shadow-warm-sm text-center">
+          <div className="bg-white dark:bg-dark-card rounded-card p-12 shadow-warm-sm text-center">
             <svg
               className="w-24 h-24 mx-auto mb-6 text-injeolmi"
               fill="none"
@@ -115,7 +115,7 @@ export default function CheckoutPage() {
   }
 
   return (
-    <main className="bg-cream min-h-screen">
+    <main className="bg-cream dark:bg-dark-bg min-h-screen">
       <div className="max-w-wide mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12">
         {/* 페이지 제목 */}
         <h1 className="text-heading-1 font-display text-chestnut mb-8">
@@ -125,7 +125,7 @@ export default function CheckoutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* 좌측: 배송 정보 폼 */}
           <div className="lg:col-span-2">
-            <form onSubmit={handleSubmit} className="bg-white rounded-card p-6 shadow-warm-sm">
+            <form onSubmit={handleSubmit} className="bg-white dark:bg-dark-card rounded-card p-6 shadow-warm-sm">
               <h2 className="text-heading-3 font-display text-chestnut mb-6">
                 배송 정보
               </h2>
@@ -193,7 +193,7 @@ export default function CheckoutPage() {
                 <div>
                   <label
                     htmlFor="memo"
-                    className="block text-body font-body font-medium text-chestnut mb-2"
+                    className="block text-body font-body font-medium text-chestnut dark:text-cream mb-2"
                   >
                     배송 메모
                   </label>
@@ -202,7 +202,7 @@ export default function CheckoutPage() {
                     name="memo"
                     value={formData.memo}
                     onChange={handleChange}
-                    className="w-full h-12 px-4 border border-injeolmi rounded-button font-body text-body text-sesame bg-white focus:outline-none focus:border-caramel focus:ring-2 focus:ring-caramel/20 transition-all duration-200"
+                    className="w-full h-12 px-4 border border-injeolmi dark:border-chestnut-light rounded-button font-body text-body text-sesame dark:text-cream bg-white dark:bg-dark-card focus:outline-none focus:border-caramel focus:ring-2 focus:ring-caramel/20 transition-all duration-200"
                   >
                     <option value="door">문 앞에 놔주세요</option>
                     <option value="security">경비실에 맡겨주세요</option>
@@ -228,7 +228,7 @@ export default function CheckoutPage() {
 
           {/* 우측: 주문 요약 */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-card p-6 shadow-warm-sm sticky top-24">
+            <div className="bg-white dark:bg-dark-card rounded-card p-6 shadow-warm-sm sticky top-24">
               <h2 className="text-heading-3 font-display text-chestnut mb-6">
                 주문 상품
               </h2>
@@ -238,7 +238,7 @@ export default function CheckoutPage() {
                 {cartItems.map(item => {
                   const vendor = vendors.find(v => v.id === item.vendorId)
                   return (
-                    <div key={item.id} className="flex items-start gap-3 pb-3 border-b border-injeolmi last:border-0">
+                    <div key={item.id} className="flex items-start gap-3 pb-3 border-b border-injeolmi dark:border-chestnut-light last:border-0">
                       <div className="flex-grow">
                         <p className="text-body font-body font-medium text-chestnut">
                           {item.name}
@@ -277,10 +277,10 @@ export default function CheckoutPage() {
                 </div>
 
                 {/* 구분선 */}
-                <div className="border-t border-injeolmi my-4"></div>
+                <div className="border-t border-injeolmi dark:border-chestnut-light my-4"></div>
 
                 {/* 총 결제 금액 */}
-                <div className="flex items-center justify-between text-body-lg font-body font-bold text-chestnut">
+                <div className="flex items-center justify-between text-body-lg font-body font-bold text-chestnut dark:text-cream">
                   <span>총 결제 금액</span>
                   <span className="text-honey">{formatPrice(finalTotal)}</span>
                 </div>

@@ -11,9 +11,9 @@ export default function Badge({
   // 기본 스타일
   const baseStyles = 'rounded-full font-body font-medium inline-flex items-center justify-center'
 
-  // variant별 스타일
+  // variant별 스타일 — 다크모드 대응 포함
   const variants = {
-    default: 'bg-injeolmi text-chestnut',
+    default: 'bg-injeolmi dark:bg-dark-surface text-chestnut dark:text-cream',
     new: 'bg-mugwort text-white',
     best: 'bg-honey text-white',
     discount: 'bg-redbean text-white',

@@ -60,14 +60,14 @@ function ProductsContent() {
   filteredProducts = sortProducts(filteredProducts, currentSort)
 
   return (
-    <main className="bg-cream min-h-screen">
+    <main className="bg-cream dark:bg-dark-bg min-h-screen">
       <div className="max-w-wide mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12">
         {/* 페이지 제목 */}
         <div className="mb-8">
           <h1 className="font-display text-heading-2 md:text-heading-1 text-chestnut mb-2">
             전체 상품
           </h1>
-          <p className="text-body text-chestnut-light">
+          <p className="text-body text-chestnut-light dark:text-caramel">
             전국 각지의 맛있는 떡을 만나보세요
           </p>
         </div>
@@ -81,8 +81,8 @@ function ProductsContent() {
         />
 
         {/* 상품 개수 표시 */}
-        <div className="mb-4 text-body text-chestnut-light">
-          총 <span className="font-bold text-chestnut">{filteredProducts.length}</span>개 상품
+        <div className="mb-4 text-body text-chestnut-light dark:text-caramel">
+          총 <span className="font-bold text-chestnut dark:text-cream">{filteredProducts.length}</span>개 상품
         </div>
 
         {/* 상품 그리드 */}
@@ -95,7 +95,7 @@ function ProductsContent() {
 export default function ProductsPage() {
   return (
     <Suspense fallback={
-      <main className="bg-cream min-h-screen">
+      <main className="bg-cream dark:bg-dark-bg min-h-screen">
         <div className="max-w-wide mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12">
           <div className="flex items-center justify-center py-16">
             <div className="text-center">
