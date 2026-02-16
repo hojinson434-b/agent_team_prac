@@ -34,11 +34,11 @@ module.exports = {
         caramel: '#C4956A',        // 카라멜 - 테두리, 호버
       },
 
-      // 폰트 패밀리
+      // 폰트 패밀리 - 시스템 폰트 사용
       fontFamily: {
-        display: ['Noto Serif KR', 'serif'],       // 제목/강조
-        body: ['Noto Sans KR', 'sans-serif'],      // 본문/UI
-        accent: ['DM Sans', 'sans-serif'],         // 영문/숫자 보조
+        display: ['serif'],       // 제목/강조
+        body: ['sans-serif'],      // 본문/UI
+        accent: ['sans-serif'],    // 영문/숫자 보조
       },
 
       // 커스텀 폰트 크기

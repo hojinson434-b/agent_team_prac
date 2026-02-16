@@ -13,11 +13,10 @@ export default function Modal({
   children,
   size = 'md'
 }) {
-  // 모달이 열리지 않았으면 렌더링하지 않음
-  if (!isOpen) return null
-
   // ESC 키로 닫기
   useEffect(() => {
+    if (!isOpen) return
+
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
         onClose()
@@ -26,7 +25,7 @@ export default function Modal({
 
     window.addEventListener('keydown', handleEscape)
     return () => window.removeEventListener('keydown', handleEscape)
-  }, [onClose])
+  }, [isOpen, onClose])
 
   // body scroll 방지
   useEffect(() => {
@@ -38,6 +37,9 @@ export default function Modal({
       document.body.style.overflow = 'unset'
     }
   }, [isOpen])
+
+  // 모달이 열리지 않았으면 렌더링하지 않음
+  if (!isOpen) return null
 
   // size별 너비
   const sizes = {

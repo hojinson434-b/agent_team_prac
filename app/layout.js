@@ -1,6 +1,5 @@
-// 루트 레이아웃 — 전체 앱에 폰트, Provider, Header/Footer 적용
+// 루트 레이아웃 — 전체 앱에 Provider, Header/Footer 적용
 
-import { Noto_Serif_KR, Noto_Sans_KR, DM_Sans } from 'next/font/google'
 import "./globals.css"
 
 // Context Providers
@@ -15,28 +14,6 @@ import { ToastProvider } from '@/components/ui/Toast'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 
-// Google Fonts 설정
-const notoSerifKR = Noto_Serif_KR({
-  subsets: ['latin'],
-  weight: ['400', '600', '700'],
-  variable: '--font-display',
-  display: 'swap',
-})
-
-const notoSansKR = Noto_Sans_KR({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-body',
-  display: 'swap',
-})
-
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-accent',
-  display: 'swap',
-})
-
 // 메타데이터
 export const metadata = {
   title: "떡담 - 떡 중개 판매 플랫폼",
@@ -49,7 +26,6 @@ export default function RootLayout({ children }) {
     <html
       lang="ko"
       suppressHydrationWarning
-      className={`${notoSerifKR.variable} ${notoSansKR.variable} ${dmSans.variable}`}
     >
       <body className="font-body bg-cream text-sesame antialiased">
         <ThemeProvider>
