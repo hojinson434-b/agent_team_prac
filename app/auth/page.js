@@ -118,13 +118,12 @@ export default function AuthPage() {
       return
     }
 
-    const success = login(loginForm.email, loginForm.password)
+    const result = login(loginForm.email, loginForm.password)
 
-    if (success) {
-      // 로그인 성공 시 메인 페이지로 이동
+    if (result.success) {
       router.push('/')
     } else {
-      setErrors({ general: '로그인에 실패했습니다. 이메일과 비밀번호를 확인해주세요.' })
+      setErrors({ general: result.error })
     }
   }
 
@@ -136,18 +135,16 @@ export default function AuthPage() {
       return
     }
 
-    const success = register({
+    const result = register({
       email: signupForm.email,
       password: signupForm.password,
       name: signupForm.name,
     })
 
-    if (success) {
-      // 회원가입 성공 시 로그인 탭으로 전환 (또는 바로 메인으로 이동)
-      // 여기서는 바로 메인으로 이동 (register 함수가 자동으로 로그인까지 처리)
+    if (result.success) {
       router.push('/')
     } else {
-      setErrors({ general: '회원가입에 실패했습니다. 다시 시도해주세요.' })
+      setErrors({ general: result.error })
     }
   }
 

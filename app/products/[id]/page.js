@@ -26,8 +26,8 @@ export default function ProductDetailPage() {
   const { toggleWishlist, isInWishlist } = useWishlist()
   const { toggleCompare, isInCompare, isCompareFull } = useCompare()
 
-  // 상품 찾기
-  const product = products.find(p => p.id === productId)
+  // 상품 찾기 (params.id는 문자열이므로 숫자로 변환)
+  const product = products.find(p => p.id === Number(productId))
 
   // 상품을 찾지 못한 경우
   if (!product) {
